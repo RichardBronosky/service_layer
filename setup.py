@@ -62,10 +62,22 @@ setup(
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=['celery[redis]', 'pyyaml', 'flower', 'boto'],
 
+    # If there are data files included in your packages that need to be
+    # installed, specify them here.  If using Python 2.6 or less, then these
+    # have to be included in MANIFEST.in as well.
+    package_data={
+        'service_layer': ['config.sample.yml'],
+    },
+
+
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
+        'service_layer_group_id': [
+            'config=service_layer.config:config_object',
+            'parser_example=service_layer.parsers:parser_example',
+        ],
         'console_scripts': [
             'msl_worker=service_layer.console_scripts:worker',
             'msl_beat=service_layer.console_scripts:beat',

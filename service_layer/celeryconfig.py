@@ -14,7 +14,7 @@ CELERYBEAT_SCHEDULE = {
         'task': 'service_layer.tasks.update_all', # notice that the complete name is needed
         'schedule': timedelta(seconds=60),
         #'schedule': timedelta(minutes=1),
-        'args': ('config.yml',)
+        'args': (),
     },
 }
 
