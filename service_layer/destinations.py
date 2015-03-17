@@ -1,6 +1,6 @@
 from __future__ import print_function
 import os
-import json
+import simplejson as json
 import re
 import boto
 from service_layer.entrypoints import entrypoints
