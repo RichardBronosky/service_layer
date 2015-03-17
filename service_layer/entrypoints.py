@@ -1,5 +1,4 @@
 import pkg_resources
-import config
 
 """
 Usage: from service_layer.entrypoints import entrypoints
@@ -13,7 +12,6 @@ this package.
 """
 
 class EntryPoints(dict):
-  config = ()
 
   def add(self, name, value):
     self[name] = value

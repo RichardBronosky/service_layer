@@ -1,0 +1,10 @@
+# One of the main reasons for choosing YAML over JSON is being able to use comments
+
+# First Feed
+-
+  url: http://example.com
+  parser: parser_example
+  destination: file://www-example-com/index.html
+  # I don't use s3 examples in the sample, but this is how you would do them
+  # The first (domain-like) path component is the Bucket and the rest is the Key
+  #destination: s3://www-example-com/index.html

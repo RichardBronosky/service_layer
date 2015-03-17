@@ -3,7 +3,7 @@ import os
 import json
 import re
 import boto
-import celeryconfig
+from service_layer.entrypoints import entrypoints
 
 class UnknowScheme(Exception):
   pass
@@ -47,7 +47,7 @@ def scheme_handler_s3(uri, data):
 
 def scheme_handler_file(uri, data):
   filepath = parse_uri(uri)['fullpath']
-  filepath = os.path.join(celeryconfig.DESTINATION_PREFIX, filepath)
+  filepath = os.path.join(entrypoints.config.destination_prefix, filepath)
   path = os.path.dirname(filepath)
   if not os.path.exists(path):
     os.makedirs(path)
