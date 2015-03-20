@@ -32,6 +32,8 @@ def parse_uri(uri):
   try:
     match = pattern_uri.match(uri)
     groupdict = match.groupdict()
+    if groupdict['path'] == None:
+      groupdict['path'] = ''
     groupdict.update({'subpath': groupdict['path'] + groupdict['basename']})
     return groupdict
   except (AttributeError,):
