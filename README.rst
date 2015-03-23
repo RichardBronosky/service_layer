@@ -1,5 +1,5 @@
 ####################
-Mobile Service Layer
+Mobile Services Layer
 ####################
 
 A lightweight, containerized API aggregator using only Python, Redis, and S3
